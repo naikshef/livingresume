@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Your Name — Portfolio</title>
+  <title>Shefali Naik — Portfolio</title>
 
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -13,8 +13,6 @@
 
   <!-- Font Awesome -->
   <script src="https://kit.fontawesome.com/your_kit_id.js" crossorigin="anonymous"></script>
-  <!-- Replace "your_kit_id" with your Font Awesome kit if you have one,
-       or use the free CDN icons by removing this and using inline SVGs. -->
 
   <style>
     :root{
@@ -35,8 +33,6 @@
       font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
       background:linear-gradient(180deg, #06070a 0%, var(--bg) 100%);
       color:#e8eef6;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
       scroll-behavior:smooth;
       line-height:1.45;
       padding-top:var(--nav-h);
@@ -90,33 +86,13 @@
     .gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px}
     .gallery-grid img{width:100%;height:140px;object-fit:cover;border-radius:10px;cursor:pointer;border:1px solid rgba(255,255,255,0.03)}
     footer{padding:36px 0;color:var(--muted);text-align:center;font-size:14px}
-    /* Scroll to top button */
-    #scrollTop{
-      position:fixed;right:20px;bottom:22px;background:var(--accent);color:#021020;border-radius:12px;padding:12px 14px;box-shadow:0 10px 24px rgba(124,92,255,0.18);cursor:pointer;display:none;z-index:999;
-    }
-    /* modal viewer */
-    .modal{
-      position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,0.7);z-index:2000;padding:28px;
-    }
+    #scrollTop{position:fixed;right:20px;bottom:22px;background:var(--accent);color:#021020;border-radius:12px;padding:12px 14px;box-shadow:0 10px 24px rgba(124,92,255,0.18);cursor:pointer;display:none;z-index:999;}
+    .modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,0.7);z-index:2000;padding:28px;}
     .modal.open{display:flex}
     .modal img{max-width:90%;max-height:86%;border-radius:10px;box-shadow:0 18px 60px rgba(0,0,0,0.6)}
-    /* small screens */
-    @media (max-width:900px){
-      .two-col{grid-template-columns:1fr}
-      .hero-right{width:260px}
-      .photo{height:360px}
-    }
-    @media (max-width:560px){
-      nav .nav-links{display:none}
-      .hero-right{display:none}
-      .container{padding:18px}
-      header.hero{padding:24px 0}
-      h1{font-size:26px}
-    }
-    /* progress bar */
-    #progress{
-      position:fixed;left:0;top:0;height:3px;background:linear-gradient(90deg,var(--accent),#5dd1ff);width:0%;z-index:1000;border-bottom-left-radius:3px;border-bottom-right-radius:3px;
-    }
+    @media (max-width:900px){.two-col{grid-template-columns:1fr}.hero-right{width:260px}.photo{height:360px}}
+    @media (max-width:560px){nav .nav-links{display:none}.hero-right{display:none}.container{padding:18px}.hero{padding:24px 0}h1{font-size:26px}}
+    #progress{position:fixed;left:0;top:0;height:3px;background:linear-gradient(90deg,var(--accent),#5dd1ff);width:0%;z-index:1000;border-bottom-left-radius:3px;border-bottom-right-radius:3px;}
   </style>
 </head>
 <body>
@@ -126,17 +102,16 @@
   <nav>
     <div class="nav-inner">
       <div class="brand">
-        <div class="logo">YN</div>
+        <div class="logo">SN</div>
         <div>
-          <div style="font-weight:700">Your Name</div>
-          <div style="font-size:12px;color:var(--muted);margin-top:2px">Product Designer • Developer • Climber</div>
+          <div style="font-weight:700">Shefali Naik</div>
+          <div style="font-size:12px;color:var(--muted);margin-top:2px">Director of Engineering | Chief Delivery Officer | AI Enthusiast</div>
         </div>
       </div>
       <div class="nav-links">
         <a href="#about">About</a>
-        <a href="#experience">Experience</a>
         <a href="#clients">Clients</a>
-        <a href="#certs">Certs</a>
+        <a href="#certs">Certifications</a>
         <a href="#gallery">Gallery</a>
         <a href="#contact">Contact</a>
       </div>
@@ -145,233 +120,70 @@
 
   <main>
     <div class="container">
-      <!-- HERO -->
       <header class="hero">
         <div class="hero-left" data-aos="fade-right">
           <div class="card">
-            <h1>Your Name <span style="font-size:15px;font-weight:600;color:var(--muted)">— Senior Product Engineer</span></h1>
-            <p class="lead">I build delightful, reliable products and climb mountains on weekends. I combine product thinking with engineering to deliver business impact. This website is a quick snapshot of my work, passions, and credentials.</p>
-
+            <h1>Shefali Naik</h1>
+            <p class="lead">I build and lead engineering teams to deliver exceptional results. Passionate about technology, AI, and climbing mountains both professionally and literally.</p>
             <div class="cta-row">
-              <a class="btn primary" href="/assets/Your_Resume.pdf" download>
-                <i class="fa fa-download" aria-hidden="true"></i> Download Resume
-              </a>
+              <a class="btn primary" href="assets/resume.pdf" download><i class="fa fa-download"></i> Download Resume</a>
               <a class="btn" href="#contact"><i class="fa fa-envelope"></i> Contact Me</a>
             </div>
-
             <div class="meta-row" aria-hidden="true">
-              <div class="meta">
-                <div style="font-size:12px;color:var(--muted)">Years experience</div>
-                <div class="counter" id="yearsCounter">0</div>
-              </div>
-              <div class="meta">
-                <div style="font-size:12px;color:var(--muted)">Projects</div>
-                <div style="font-size:18px;font-weight:700">24</div>
-              </div>
-              <div class="meta">
-                <div style="font-size:12px;color:var(--muted)">Passion</div>
-                <div style="font-size:18px;font-weight:700">Climbing</div>
-              </div>
+              <div class="meta"><div style="font-size:12px;color:var(--muted)">Years experience</div><div class="counter" id="yearsCounter">0</div></div>
             </div>
           </div>
         </div>
 
         <aside class="hero-right" data-aos="fade-left">
           <div class="photo card">
-            <!-- Replace this with your image at /assets/profile.jpg -->
-            <img src="/assets/profile.jpg" alt="Shefali Naik" id="profilePhoto">
+            <img src="assets/profile.jpg" alt="Shefali Naik">
           </div>
         </aside>
       </header>
 
-      <!-- ABOUT -->
-      <section id="about" class="section" data-aos="fade-up">
-        <div class="section-title"><h2>About Me</h2></div>
-        <div class="two-col">
-          <div>
-            <div class="card">
-              <h3 style="margin-top:0">Quick summary</h3>
-              <p class="lead" style="margin-bottom:10px">I am a product-minded engineer with experience across SaaS, platforms and growth products. I enjoy building simple systems that scale and ships features that customers love.</p>
-              <ul style="color:var(--muted);margin:0;padding-left:18px">
-                <li>Open to Senior Product / Engineering roles</li>
-                <li>Comfortable: JS, React, HTML/CSS, Node</li>
-                <li>Location: Ashburn, VA — open to remote</li>
-              </ul>
-            </div>
-
-            <div style="height:18px"></div>
-
-            <div class="card" style="padding:16px">
-              <h4 style="margin:0 0 8px">Favorite quote</h4>
-              <div class="quote-card">
-                <div style="font-size:15px">“The best view comes after the hardest climb.”</div>
-                <div style="margin-top:8px;color:var(--muted);font-size:13px">— Favorite book: <strong>Into Thin Air</strong></div>
-              </div>
-            </div>
-
-          </div>
-
-          <aside>
-            <div class="card">
-              <h4 style="margin-top:0">Contact</h4>
-              <div style="display:flex;flex-direction:column;gap:10px;margin-top:8px">
-                <a class="btn" href="mailto:you@example.com"><i class="fa fa-envelope"></i> you@example.com</a>
-                <a class="btn" href="https://www.linkedin.com/in/yourprofile" target="_blank"><i class="fa fa-linkedin"></i> LinkedIn</a>
-                <a class="btn" href="https://github.com/yourusername" target="_blank"><i class="fa fa-github"></i> GitHub</a>
-              </div>
-            </div>
-          </aside>
-        </div>
-      </section>
-
-      <!-- EXPERIENCE -->
-      <section id="experience" class="section" data-aos="fade-up">
-        <div class="section-title"><h2>Experience</h2></div>
-
-        <div style="display:flex;gap:14px;flex-wrap:wrap">
-          <div class="card" style="flex:1;min-width:260px">
-            <h3 style="margin-top:0">Senior Product Engineer — Acme Inc.</h3>
-            <div style="color:var(--muted);font-size:13px">2019 — Present</div>
-            <p style="margin-top:10px;color:var(--muted)">Built user-facing platform features that increased retention by 14%. Led migrations to TypeScript and improved developer experience.</p>
-            <div style="margin-top:10px;color:var(--muted);font-size:13px"><strong>Key:</strong> System design, product metrics, team mentorship</div>
-          </div>
-
-          <div class="card" style="flex:1;min-width:260px">
-            <h3 style="margin-top:0">Product Engineer — Beta Labs</h3>
-            <div style="color:var(--muted);font-size:13px">2016 — 2019</div>
-            <p style="margin-top:10px;color:var(--muted)">Worked on growth experiments, analytics events and shipping features quickly.</p>
-            <div style="margin-top:10px;color:var(--muted);font-size:13px"><strong>Key:</strong> A/B testing, data instrumentation</div>
-          </div>
-        </div>
-      </section>
-
       <!-- CLIENTS -->
       <section id="clients" class="section" data-aos="fade-up">
-        <div class="section-title"><h2>Clients & logos</h2></div>
-        <p style="color:var(--muted);margin-top:0">Logos of clients I have served — click to enlarge. Replace files in <code>/assets/clients/</code>.</p>
-
-        <div class="clients-grid" style="margin-top:12px">
-          <!-- Copy / add .client-card elements. Replace image src with your client logos -->
-          <div class="client-card" data-client="Client A" onclick="openImage('/assets/clients/us-courts-logo.png')">
-            <img src="/assets/clients/us-courts-logo.png" alt="us-courts-logo.png">
-          </div>
-          <div class="client-card" data-client="Client B" onclick="openImage('/assets/clients/fcc-logo.png')">
-            <img src="/assets/clients/fcc-logo.png" alt="fcc-logo.png">
-          </div>
-          <div class="client-card" data-client="Client C" onclick="openImage('/assets/clients/nara-logo.png')">
-            <img src="/assets/clients/nara-logo.png" alt="nara-logo.png">
-          </div>
-          <div class="client-card" data-client="Client D" onclick="openImage('/assets/clients/smithsonian-logo.png')">
-            <img src="/assets/clients/smithsonian-logo.png" alt="smithsonian logo">
-          </div>
-          <div class="client-card" data-client="Client D" onclick="openImage('/assets/clients/client4.png')">
-            <img src="/assets/clients/client4-placeholder.png" alt="Client 4 logo">
-          </div>
-          <div class="client-card" data-client="Client D" onclick="openImage('/assets/clients/client4.png')">
-            <img src="/assets/clients/client4-placeholder.png" alt="Client 4 logo">
-          </div>
-          <div class="client-card" data-client="Client D" onclick="openImage('/assets/clients/client4.png')">
-            <img src="/assets/clients/client4-placeholder.png" alt="Client 4 logo">
-          </div>
-          <div class="client-card" data-client="Client D" onclick="openImage('/assets/clients/client4.png')">
-            <img src="/assets/clients/client4-placeholder.png" alt="Client 4 logo">
-          </div>
-          <div class="client-card" data-client="Client D" onclick="openImage('/assets/clients/client4.png')">
-            <img src="/assets/clients/client4-placeholder.png" alt="Client 4 logo">
-          </div>
+        <div class="section-title"><h2>Clients & Logos</h2></div>
+        <div class="clients-grid">
+          <div class="client-card" onclick="openImage('assets/nara-logo.png')"><img src="assets/nara-logo.png" alt="NARA"></div>
+          <div class="client-card" onclick="openImage('assets/some-logo.png')"><img src="assets/some-logo.png" alt="Some Logo"></div>
+          <div class="client-card" onclick="openImage('assets/acus-logo.png')"><img src="assets/acus-logo.png" alt="ACUS"></div>
+          <div class="client-card" onclick="openImage('assets/advisory-council-historuc-preservation-logo.png')"><img src="assets/advisory-council-historuc-preservation-logo.png" alt="Advisory Council"></div>
+          <div class="client-card" onclick="openImage('assets/bulletin-of-the-atomic-scientists-logo.png')"><img src="assets/bulletin-of-the-atomic-scientists-logo.png" alt="Bulletin of Atomic Scientists"></div>
+          <div class="client-card" onclick="openImage('assets/distric-of-columbia-logo.png')"><img src="assets/distric-of-columbia-logo.png" alt="District of Columbia"></div>
+          <div class="client-card" onclick="openImage('assets/echange-network-logo.png')"><img src="assets/echange-network-logo.png" alt="Exchange Network"></div>
+          <div class="client-card" onclick="openImage('assets/english-language-program-logo.png')"><img src="assets/english-language-program-logo.png" alt="English Language Program"></div>
+          <div class="client-card" onclick="openImage('assets/exchange-network-logo.png')"><img src="assets/exchange-network-logo.png" alt="Exchange Network"></div>
+          <div class="client-card" onclick="openImage('assets/fcc-logo.png')"><img src="assets/fcc-logo.png" alt="FCC"></div>
+          <div class="client-card" onclick="openImage('assets/georgetown-university-logo.png')"><img src="assets/georgetown-university-logo.png" alt="Georgetown University"></div>
+          <div class="client-card" onclick="openImage('assets/rrb-logo.png')"><img src="assets/rrb-logo.png" alt="RRB"></div>
+          <div class="client-card" onclick="openImage('assets/smithsonian-logo.png')"><img src="assets/smithsonian-logo.png" alt="Smithsonian"></div>
+          <div class="client-card" onclick="openImage('assets/us-courts-logo.png')"><img src="assets/us-courts-logo.png" alt="US Courts"></div>
+          <div class="client-card" onclick="openImage('assets/4h-logo.png')"><img src="assets/4h-logo.png" alt="4H"></div>
+          <div class="client-card" onclick="openImage('assets/acus-logo.svg')"><img src="assets/acus-logo.svg" alt="ACUS SVG"></div>
         </div>
       </section>
 
-      <!-- CERTIFICATIONS -->
-      <section id="certs" class="section" data-aos="fade-up">
-        <div class="section-title"><h2>Certifications</h2></div>
-        <div class="cert-list">
-          <div class="cert">
-            <div>
-              <div style="font-weight:700">PMP — Project Management Professional</div>
-              <div style="font-size:13px;color:var(--muted)">Issued Nov 2024 • Credential ID: XXXXX</div>
-            </div>
-            <div style="font-size:13px;color:var(--muted)">Verified</div>
-          </div>
-
-          <div class="cert">
-            <div>
-              <div style="font-weight:700">Certified Scrum Master</div>
-              <div style="font-size:13px;color:var(--muted)">Issued 2022</div>
-            </div>
-            <div style="font-size:13px;color:var(--muted)">Verified</div>
-          </div>
-
-          <!-- Add more certs as needed -->
-        </div>
-      </section>
-
-      <!-- GALLERY -->
-      <section id="gallery" class="section" data-aos="fade-up">
-        <div class="section-title"><h2>Climbing & Life — Gallery</h2></div>
-        <p style="color:var(--muted);margin-top:0">A few of my favorite climbing photos. Click to view larger.</p>
-
-        <div class="gallery-grid" style="margin-top:12px">
-          <img src="/assets/gallery/climb1-placeholder.jpg" alt="Climb 1" onclick="openImage('/assets/gallery/climb1.jpg')">
-          <img src="/assets/gallery/climb2-placeholder.jpg" alt="Climb 2" onclick="openImage('/assets/gallery/climb2.jpg')">
-          <img src="/assets/gallery/roadtrip-placeholder.jpg" alt="Roadtrip" onclick="openImage('/assets/gallery/roadtrip.jpg')">
-          <img src="/assets/gallery/gear-placeholder.jpg" alt="Gear" onclick="openImage('/assets/gallery/gear.jpg')">
-        </div>
+      <!-- FAVORITE QUOTE -->
+      <section id="quote" class="section" data-aos="fade-up">
+        <div class="section-title"><h2>Favorite Quote</h2></div>
+        <div class="quote-card">“I didn't come this far to only come this far.”</div>
       </section>
 
     </div>
   </main>
 
-  <!-- Modal for images -->
-  <div id="modal" class="modal" onclick="closeModal()" role="dialog" aria-modal="true">
-    <img id="modalImg" src="" alt="Expanded photo">
-  </div>
-
-  <div class="container">
-    <footer id="contact" class="section" data-aos="fade-up">
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap">
-        <div>
-          <div style="font-weight:700">Want to work together?</div>
-          <div style="color:var(--muted)">Email me at <a href="mailto:you@example.com" style="color:var(--accent)">you@example.com</a></div>
-        </div>
-        <div style="display:flex;gap:10px">
-          <a href="https://github.com/yourusername" class="btn" target="_blank"><i class="fa fa-github"></i> GitHub</a>
-          <a href="https://linkedin.com/in/yourprofile" class="btn" target="_blank"><i class="fa fa-linkedin"></i> LinkedIn</a>
-        </div>
-      </div>
-
-      <div style="margin-top:18px;color:var(--muted)">© <span id="year"></span> Your Name — Built with ❤️ • Hosted on GitHub Pages</div>
-    </footer>
-  </div>
-
+  <div id="modal" class="modal" onclick="closeModal()"><img id="modalImg" src="" alt="Expanded photo"></div>
   <div id="scrollTop" title="Scroll to top" onclick="scrollToTop()"><i class="fa fa-chevron-up"></i></div>
 
-  <!-- Scripts -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script>
-    // ====== Configuration (edit these) ======
-    const startYear = 2016; // change to the year you started your professional career
-    const totalProjects = 24; // edit
-    // =======================================
+    // Years of experience
+    const startYear = 2016;
+    document.getElementById('yearsCounter').innerText = new Date().getFullYear() - startYear;
 
-    // Years of experience counter
-    function calcYears(s) {
-      const now = new Date();
-      return Math.max(0, now.getFullYear() - s);
-    }
-    document.getElementById('yearsCounter').innerText = calcYears(startYear);
-
-    // Set year in footer
-    document.getElementById('year').innerText = new Date().getFullYear();
-
-    // AOS init
-    AOS.init({
-      duration: 800,
-      once: true,
-      easing: 'cubic-bezier(.2,.8,.2,1)'
-    });
-
-    // Modal image viewer
+    // Modal viewer
     const modal = document.getElementById('modal');
     const modalImg = document.getElementById('modalImg');
     function openImage(src){
@@ -382,44 +194,16 @@
       modal.classList.remove('open');
       modalImg.src = '';
     }
-    // prevent inner click from closing
-    modalImg.addEventListener('click', (e)=>e.stopPropagation());
 
-    // Scroll to top button visibility
+    // Scroll to top
     const scrollTopBtn = document.getElementById('scrollTop');
     window.addEventListener('scroll', ()=>{
-      const showAt = 360;
-      if(window.scrollY > showAt) scrollTopBtn.style.display = 'block';
-      else scrollTopBtn.style.display = 'none';
-
-      // progress bar
-      const doc = document.documentElement;
-      const scrolled = (doc.scrollTop) / (doc.scrollHeight - doc.clientHeight);
-      document.getElementById('progress').style.width = (scrolled * 100) + '%';
+      if(window.scrollY > 360) scrollTopBtn.style.display='block';
+      else scrollTopBtn.style.display='none';
     });
-
-    function scrollToTop(){
-      window.scrollTo({top:0,behavior:'smooth'});
-    }
-
-    // Smooth reveal when clicking nav anchors (offset for fixed nav)
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click', function(e){
-        const target = document.querySelector(this.getAttribute('href'));
-        if(target){
-          e.preventDefault();
-          const y = target.getBoundingClientRect().top + window.scrollY - (parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-h')) || 72);
-          window.scrollTo({top: y, behavior: 'smooth'});
-        }
-      });
-    });
-
-    // Optional: lazy-load images (basic)
-    document.addEventListener('DOMContentLoaded', ()=>{
-      document.querySelectorAll('img').forEach(img=>{
-        if(img.dataset && img.dataset.src) img.src = img.dataset.src;
-      });
-    });
+    function scrollToTop(){window.scrollTo({top:0,behavior:'smooth'});}
+    AOS.init({duration:800,once:true,easing:'cubic-bezier(.2,.8,.2,1)'});
   </script>
+
 </body>
 </html>
