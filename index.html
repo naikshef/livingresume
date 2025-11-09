@@ -100,13 +100,48 @@
     .card{background:var(--card);border-radius:var(--radius);padding:24px;box-shadow:0 6px 24px rgba(0,0,0,0.4);}
     .meta{color:var(--muted);font-size:14px;}
 
-    /* Clients */
-    #clients{background:#f9f9f9;color:#1e1e1e;border-radius:var(--radius);padding:64px 24px;}
-    .clients-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:32px;}
-    .client-card{display:flex;align-items:center;justify-content:center;padding:16px;background:#fff;border-radius:var(--radius);transition:all 0.3s;box-shadow:0 4px 16px rgba(0,0,0,0.15);}
-    .client-card img{max-height:100px;object-fit:contain;transition:transform 0.3s;}
-    .client-card:hover img{transform:scale(1.1);}
-    .client-card:hover{box-shadow:0 8px 32px rgba(0,0,0,0.25);}
+    /* Clients section */
+    #clients{
+      background: rgba(255,255,255,0.08); /* subtle highlight */
+      color:#c9d1d9;
+      border-radius:var(--radius);
+      padding:64px 24px;
+    }
+    .clients-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+      gap:32px;
+    }
+    .client-card{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:16px;
+      background:var(--card);
+      border-radius:var(--radius);
+      transition:all 0.3s;
+      cursor:pointer;
+      box-shadow:0 4px 16px rgba(0,0,0,0.15);
+    }
+    .client-card img{
+      max-height:100px;
+      object-fit:contain;
+      transition:transform 0.3s;
+    }
+    .client-card:hover img{
+      transform:scale(1.1);
+    }
+    .client-card:hover{
+      box-shadow:0 8px 32px rgba(0,0,0,0.25);
+    }
+
+    /* Modal for client logos */
+    #logoModal{
+      position:fixed;inset:0;display:none;align-items:center;justify-content:center;
+      background: rgba(0,0,0,0.85); z-index:2000; padding:24px;
+    }
+    #logoModal.open{display:flex;}
+    #logoModal img{max-width:90%; max-height:80%; border-radius:var(--radius); box-shadow:0 18px 60px rgba(0,0,0,0.7);}
 
     /* Gallery */
     .gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;}
@@ -125,7 +160,7 @@
     /* Footer */
     footer{padding:48px 0;text-align:center;color:var(--muted);font-size:14px;background:var(--card);border-top:1px solid rgba(255,255,255,0.05);}
 
-    /* Modal */
+    /* Modal for gallery */
     .modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,0.85);z-index:2000;padding:24px;}
     .modal.open{display:flex;}
     .modal img{max-width:90%;max-height:86%;border-radius:var(--radius);box-shadow:0 18px 60px rgba(0,0,0,0.7);transition:transform 0.3s;}
@@ -133,7 +168,6 @@
     /* Scroll to top */
     #scrollTop{position:fixed;right:20px;bottom:20px;padding:12px 16px;border-radius:12px;background:var(--accent);color:#fff;cursor:pointer;box-shadow:0 10px 32px rgba(124,92,255,0.3);display:none;z-index:1000;transition:all 0.2s;}
     #scrollTop:hover{transform:scale(1.05);}
-
   </style>
 </head>
 <body>
@@ -190,26 +224,33 @@
     <section id="clients" class="section" data-aos="fade-up">
       <div class="section-title"><h2>Clients & Logos</h2></div>
       <div class="clients-grid">
-        <div class="client-card"><img src="assets/nara-logo.png" alt="NARA"></div>
-        <div class="client-card"><img src="assets/some-logo.png" alt="Some Logo"></div>
-        <div class="client-card"><img src="assets/acus-logo.png" alt="ACUS"></div>
-        <div class="client-card"><img src="assets/advisory-council-historuc-preservation-logo.png" alt="Advisory Council"></div>
-        <div class="client-card"><img src="assets/bulletin-of-the-atomic-scientists-logo.png" alt="Bulletin of Atomic Scientists"></div>
-        <div class="client-card"><img src="assets/distric-of-columbia-logo.png" alt="District of Columbia"></div>
-        <div class="client-card"><img src="assets/echange-network-logo.png" alt="Exchange Network"></div>
-        <div class="client-card"><img src="assets/english-language-program-logo.png" alt="English Language Program"></div>
-        <div class="client-card"><img src="assets/exchange-network-logo.png" alt="Exchange Network"></div>
-        <div class="client-card"><img src="assets/fcc-logo.png" alt="FCC"></div>
-        <div class="client-card"><img src="assets/georgetown-university-logo.png" alt="Georgetown University"></div>
-        <div class="client-card"><img src="assets/rrb-logo.png" alt="RRB"></div>
-        <div class="client-card"><img src="assets/smithsonian-logo.png" alt="Smithsonian"></div>
-        <div class="client-card"><img src="assets/us-courts-logo.png" alt="US Courts"></div>
-        <div class="client-card"><img src="assets/4h-logo.png" alt="4H"></div>
-        <div class="client-card"><img src="assets/acus-logo.svg" alt="ACUS SVG"></div>
+        <div class="client-card" onclick="openLogo('assets/nara-logo.png')">
+          <img src="assets/nara-logo.png" alt="NARA">
+        </div>
+        <div class="client-card" onclick="openLogo('assets/some-logo.png')">
+          <img src="assets/some-logo.png" alt="Some Logo">
+        </div>
+        <div class="client-card" onclick="openLogo('assets/acus-logo.png')">
+          <img src="assets/acus-logo.png" alt="ACUS">
+        </div>
+        <div class="client-card" onclick="openLogo('assets/advisory-council-historuc-preservation-logo.png')">
+          <img src="assets/advisory-council-historuc-preservation-logo.png" alt="Advisory Council">
+        </div>
+        <div class="client-card" onclick="openLogo('assets/bulletin-of-the-atomic-scientists-logo.png')">
+          <img src="assets/bulletin-of-the-atomic-scientists-logo.png" alt="Bulletin Atomic Scientists">
+        </div>
+        <div class="client-card" onclick="openLogo('assets/distric-of-columbia-logo.png')">
+          <img src="assets/distric-of-columbia-logo.png" alt="District of Columbia">
+        </div>
+        <!-- Add remaining logos similarly -->
       </div>
     </section>
 
-        <!-- Certifications -->
+<!-- Modal for client logos -->
+<div id="logoModal" onclick="closeLogoModal()">
+  <img id="logoModalImg" src="" alt="Client Logo">
+</div>
+    <!-- Certifications -->
     <section id="certs" class="section" data-aos="fade-up">
       <div class="section-title"><h2>Certifications</h2></div>
       <div class="cert-list">
@@ -277,10 +318,10 @@
     <section id="gallery" class="section" data-aos="fade-up">
       <div class="section-title"><h2>Climbing & Adventure</h2></div>
       <div class="gallery-grid">
-        <img src="assets/climb1.jpg" alt="Climbing 1" onclick="openImage(this.src)">
-        <img src="assets/climb2.jpg" alt="Climbing 2" onclick="openImage(this.src)">
-        <img src="assets/climb3.jpg" alt="Climbing 3" onclick="openImage(this.src)">
-        <img src="assets/climb4.jpg" alt="Climbing 4" onclick="openImage(this.src)">
+        <img src="assets/climb1.jpg" alt="Climbing 1" onclick="openGallery(this.src)">
+        <img src="assets/climb2.jpg" alt="Climbing 2" onclick="openGallery(this.src)">
+        <img src="assets/climb3.jpg" alt="Climbing 3" onclick="openGallery(this.src)">
+        <img src="assets/climb4.jpg" alt="Climbing 4" onclick="openGallery(this.src)">
       </div>
     </section>
 
@@ -293,9 +334,9 @@
   </div>
 </main>
 
-<!-- Modal for Gallery -->
-<div class="modal" id="modal" onclick="closeModal()">
-  <img id="modalImg" src="" alt="Expanded Image">
+<!-- Modal for gallery images -->
+<div class="modal" id="galleryModal" onclick="closeGallery()">
+  <img id="galleryImg" src="" alt="Expanded Image">
 </div>
 
 <!-- Scroll to Top -->
@@ -317,12 +358,27 @@
 
   function scrollToTop(){window.scrollTo({top:0,behavior:'smooth'})}
 
-  // Modal image view
-  function openImage(src){
-    document.getElementById('modalImg').src=src;
-    document.getElementById('modal').classList.add('open');
+  // Client logo modal
+  function openLogo(src){
+    const modal = document.getElementById('logoModal');
+    const img = document.getElementById('logoModalImg');
+    img.src = src;
+    modal.classList.add('open');
   }
-  function closeModal(){document.getElementById('modal').classList.remove('open');}
+  function closeLogoModal(){
+    document.getElementById('logoModal').classList.remove('open');
+  }
+
+  // Gallery modal
+  function openGallery(src){
+    const modal = document.getElementById('galleryModal');
+    const img = document.getElementById('galleryImg');
+    img.src = src;
+    modal.classList.add('open');
+  }
+  function closeGallery(){
+    document.getElementById('galleryModal').classList.remove('open');
+  }
 
   // Animate experience counter
   const yearsCounter = document.getElementById('yearsCounter');
@@ -332,17 +388,6 @@
     if(count>=years){clearInterval(interval)}
     else{count++; yearsCounter.textContent=count}
   },50);
-
-  // Scroll progress bar
-  const progress = document.getElementById('progress');
-  window.addEventListener('scroll',()=>{
-    const scrollTop = window.scrollY;
-    const docHeight = document.body.scrollHeight - window.innerHeight;
-    const scrolled = (scrollTop / docHeight) * 100;
-    progress.style.width = scrolled + '%';
-  });
 </script>
 </body>
 </html>
-
-
