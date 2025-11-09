@@ -16,12 +16,12 @@
 
   <style>
     :root{
-      --bg:#0b0f14;
-      --card:#0f1419;
-      --muted:#9aa6b2;
+      --bg:#f4f6f8;
+      --card:#ffffff;
+      --muted:#6b7280;
       --accent:#7c5cff;
-      --glass: rgba(255,255,255,0.03);
-      --glass-2: rgba(255,255,255,0.02);
+      --glass: rgba(0,0,0,0.03);
+      --glass-2: rgba(0,0,0,0.02);
       --radius:14px;
       --maxw:1100px;
       --nav-h:72px;
@@ -31,8 +31,8 @@
     body{
       margin:0;
       font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
-      background:linear-gradient(180deg, #06070a 0%, var(--bg) 100%);
-      color:#e8eef6;
+      background: var(--bg);
+      color:#1e1e1e;
       scroll-behavior:smooth;
       line-height:1.45;
       padding-top:var(--nav-h);
@@ -40,105 +40,96 @@
     .container{max-width:var(--maxw);margin:0 auto;padding:28px}
     nav{
       position:fixed;top:0;left:0;right:0;height:var(--nav-h);display:flex;align-items:center;
-      background:linear-gradient(180deg, rgba(8,10,12,0.85), rgba(8,10,12,0.6));
+      background: rgba(255,255,255,0.95);
       backdrop-filter: blur(6px);
       z-index:999;
-      border-bottom:1px solid rgba(255,255,255,0.03);
+      border-bottom:1px solid rgba(0,0,0,0.05);
     }
     .nav-inner{max-width:var(--maxw);margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between}
     .brand{display:flex;gap:12px;align-items:center}
     .brand .logo{
-      width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#5dd1ff);display:flex;align-items:center;justify-content:center;font-weight:700;color:#021020;
+      width:44px;height:44px;border-radius:10px;background:var(--accent);display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;
       box-shadow:0 6px 18px rgba(124,92,255,0.14);
     }
     .nav-links a{color:var(--muted);margin-left:18px;text-decoration:none;font-weight:600;font-size:14px}
-    .nav-links a:hover{color:#fff}
+    .nav-links a:hover{color:#1e1e1e}
     header.hero{display:flex;gap:28px;align-items:center;padding:48px 0;flex-wrap:wrap}
     .hero-left{flex:1;min-width:300px}
     .hero-right{width:320px;flex:0 0 320px}
     .photo{
       width:320px;height:420px;border-radius:18px;overflow:hidden;background:linear-gradient(180deg,var(--glass),transparent);
-      border:1px solid rgba(255,255,255,0.04);display:flex;align-items:center;justify-content:center;position:relative;
+      border:1px solid rgba(0,0,0,0.03);display:flex;align-items:center;justify-content:center;position:relative;
     }
     .photo img{width:100%;height:100%;object-fit:cover;display:block}
-    .card{background:linear-gradient(180deg,var(--card), rgba(20,24,28,0.6));padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+    .card{background:var(--card);padding:18px;border-radius:12px;border:1px solid rgba(0,0,0,0.05)}
     h1{margin:0 0 10px;font-size:32px;letter-spacing:-0.4px}
     p.lead{color:var(--muted);margin-top:6px;font-size:15px}
     .cta-row{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap}
     .btn{
-      display:inline-flex;align-items:center;gap:10px;padding:11px 16px;border-radius:10px;font-weight:600;border:1px solid rgba(255,255,255,0.04);text-decoration:none;color:#fff;background:transparent;cursor:pointer;
+      display:inline-flex;align-items:center;gap:10px;padding:11px 16px;border-radius:10px;font-weight:600;border:1px solid rgba(0,0,0,0.05);text-decoration:none;color:#fff;background:var(--accent);cursor:pointer;
       transition:all .18s ease;
     }
-    .btn.primary{background:linear-gradient(90deg,var(--accent),#4dd7ff);color:#021020;box-shadow:0 10px 30px rgba(124,92,255,0.12)}
+    .btn.primary{background:var(--accent);color:#fff;box-shadow:0 10px 30px rgba(124,92,255,0.12)}
     .meta-row{display:flex;gap:18px;margin-top:18px;flex-wrap:wrap}
     .meta{background:var(--glass-2);padding:10px 12px;border-radius:10px;color:var(--muted);font-weight:600}
     .section{padding:56px 0}
     .section .section-title{display:flex;align-items:center;gap:12px;margin-bottom:18px}
-    .section .section-title h2{margin:0;font-size:20px}
+    .section .section-title h2{margin:0;font-size:20px;color:var(--accent)}
 
     /* Clients section */
     #clients {
-      background: linear-gradient(135deg, rgba(124,92,255,0.05), rgba(77,215,255,0.05));
-      backdrop-filter: blur(8px);
+      background: #ffffff; 
       padding: 56px 0;
-      border-radius: 12px;
+      border-radius: 14px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.05);
       margin-bottom: 28px;
     }
     .clients-grid{
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+      grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
       gap:24px;
       align-items:center;
     }
     .client-card{
-      height:110px;
-      background: rgba(255, 255, 255, 0.02);
+      height:120px;
       display:flex;
       align-items:center;
       justify-content:center;
       border-radius:12px;
-      padding:10px;
-      border:1px solid rgba(255,255,255,0.03);
-      cursor:pointer;
+      padding:12px;
       transition:all 0.25s ease;
     }
-    .client-card:hover{
-      transform: scale(1.08);
-      box-shadow: 0 12px 28px rgba(124,92,255,0.25);
-    }
     .client-card img{
-      max-height:90px;
+      max-height:100px;
       max-width:100%;
       object-fit:contain;
-      filter:grayscale(40%) brightness(1.1);
-      transition: transform 0.25s, filter 0.25s, box-shadow 0.25s;
+      transition: transform 0.25s, filter 0.25s;
     }
     .client-card:hover img{
-      transform: scale(1.05);
-      filter: grayscale(0%) brightness(1.2);
+      transform: scale(1.08);
     }
 
     /* Certifications */
     .cert-list{display:flex;flex-direction:column;gap:10px}
-    .cert{background:var(--glass);padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.02);display:flex;justify-content:space-between;align-items:flex-start}
+    .cert{background:var(--glass);padding:12px;border-radius:10px;border:1px solid rgba(0,0,0,0.02);display:flex;justify-content:space-between;align-items:flex-start}
 
     /* Quote */
-    .quote-card{font-style:italic;color:#dbe9ff;padding:18px;border-radius:12px;background:linear-gradient(180deg, rgba(124,92,255,0.06), rgba(124,92,255,0.02));border:1px solid rgba(124,92,255,0.06)}
+    .quote-card{font-style:italic;color:#4b5563;padding:18px;border-radius:12px;background:rgba(124,92,255,0.06);border:1px solid rgba(124,92,255,0.1)}
 
     /* Gallery */
     .gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px}
-    .gallery-grid img{width:100%;height:140px;object-fit:cover;border-radius:10px;cursor:pointer;border:1px solid rgba(255,255,255,0.03);transition:transform 0.2s}
+    .gallery-grid img{width:100%;height:140px;object-fit:cover;border-radius:10px;cursor:pointer;border:1px solid rgba(0,0,0,0.03);transition:transform 0.2s}
     .gallery-grid img:hover{transform:scale(1.05)}
 
     footer{padding:36px 0;color:var(--muted);text-align:center;font-size:14px}
-    #scrollTop{position:fixed;right:20px;bottom:22px;background:var(--accent);color:#021020;border-radius:12px;padding:12px 14px;box-shadow:0 10px 24px rgba(124,92,255,0.18);cursor:pointer;display:none;z-index:999;}
+    #scrollTop{position:fixed;right:20px;bottom:22px;background:var(--accent);color:#fff;border-radius:12px;padding:12px 14px;box-shadow:0 10px 24px rgba(124,92,255,0.18);cursor:pointer;display:none;z-index:999;}
     .modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,0.7);z-index:2000;padding:28px;}
     .modal.open{display:flex}
     .modal img{max-width:90%;max-height:86%;border-radius:10px;box-shadow:0 18px 60px rgba(0,0,0,0.6)}
 
     @media (max-width:900px){.two-col{grid-template-columns:1fr}.hero-right{width:260px}.photo{height:360px}}
     @media (max-width:560px){nav .nav-links{display:none}.hero-right{display:none}.container{padding:18px}.hero{padding:24px 0}h1{font-size:26px}}
-    #progress{position:fixed;left:0;top:0;height:3px;background:linear-gradient(90deg,var(--accent),#5dd1ff);width:0%;z-index:1000;border-bottom-left-radius:3px;border-bottom-right-radius:3px;}
+    #progress{position:fixed;left:0;top:0;height:3px;background:var(--accent);width:0%;z-index:1000;border-bottom-left-radius:3px;border-bottom-right-radius:3px;}
   </style>
 </head>
 <body>
@@ -199,22 +190,22 @@
       <section id="clients" class="section" data-aos="fade-up">
         <div class="section-title"><h2>Clients & Logos</h2></div>
         <div class="clients-grid">
-          <div class="client-card" onclick="openImage('assets/nara-logo.png')"><img src="assets/nara-logo.png" alt="NARA"></div>
-          <div class="client-card" onclick="openImage('assets/some-logo.png')"><img src="assets/some-logo.png" alt="Some Logo"></div>
-          <div class="client-card" onclick="openImage('assets/acus-logo.png')"><img src="assets/acus-logo.png" alt="ACUS"></div>
-          <div class="client-card" onclick="openImage('assets/advisory-council-historuc-preservation-logo.png')"><img src="assets/advisory-council-historuc-preservation-logo.png" alt="Advisory Council"></div>
-          <div class="client-card" onclick="openImage('assets/bulletin-of-the-atomic-scientists-logo.png')"><img src="assets/bulletin-of-the-atomic-scientists-logo.png" alt="Bulletin of Atomic Scientists"></div>
-          <div class="client-card" onclick="openImage('assets/distric-of-columbia-logo.png')"><img src="assets/distric-of-columbia-logo.png" alt="District of Columbia"></div>
-          <div class="client-card" onclick="openImage('assets/echange-network-logo.png')"><img src="assets/echange-network-logo.png" alt="Exchange Network"></div>
-          <div class="client-card" onclick="openImage('assets/english-language-program-logo.png')"><img src="assets/english-language-program-logo.png" alt="English Language Program"></div>
-          <div class="client-card" onclick="openImage('assets/exchange-network-logo.png')"><img src="assets/exchange-network-logo.png" alt="Exchange Network"></div>
-          <div class="client-card" onclick="openImage('assets/fcc-logo.png')"><img src="assets/fcc-logo.png" alt="FCC"></div>
-          <div class="client-card" onclick="openImage('assets/georgetown-university-logo.png')"><img src="assets/georgetown-university-logo.png" alt="Georgetown University"></div>
-          <div class="client-card" onclick="openImage('assets/rrb-logo.png')"><img src="assets/rrb-logo.png" alt="RRB"></div>
-          <div class="client-card" onclick="openImage('assets/smithsonian-logo.png')"><img src="assets/smithsonian-logo.png" alt="Smithsonian"></div>
-          <div class="client-card" onclick="openImage('assets/us-courts-logo.png')"><img src="assets/us-courts-logo.png" alt="US Courts"></div>
-          <div class="client-card" onclick="openImage('assets/4h-logo.png')"><img src="assets/4h-logo.png" alt="4H"></div>
-          <div class="client-card" onclick="openImage('assets/acus-logo.svg')"><img src="assets/acus-logo.svg" alt="ACUS SVG"></div>
+          <div class="client-card"><img src="assets/nara-logo.png" alt="NARA"></div>
+          <div class="client-card"><img src="assets/some-logo.png" alt="Some Logo"></div>
+          <div class="client-card"><img src="assets/acus-logo.png" alt="ACUS"></div>
+          <div class="client-card"><img src="assets/advisory-council-historuc-preservation-logo.png" alt="Advisory Council"></div>
+          <div class="client-card"><img src="assets/bulletin-of-the-atomic-scientists-logo.png" alt="Bulletin of Atomic Scientists"></div>
+          <div class="client-card"><img src="assets/distric-of-columbia-logo.png" alt="District of Columbia"></div>
+          <div class="client-card"><img src="assets/echange-network-logo.png" alt="Exchange Network"></div>
+          <div class="client-card"><img src="assets/english-language-program-logo.png" alt="English Language Program"></div>
+          <div class="client-card"><img src="assets/exchange-network-logo.png" alt="Exchange Network"></div>
+          <div class="client-card"><img src="assets/fcc-logo.png" alt="FCC"></div>
+          <div class="client-card"><img src="assets/georgetown-university-logo.png" alt="Georgetown University"></div>
+          <div class="client-card"><img src="assets/rrb-logo.png" alt="RRB"></div>
+          <div class="client-card"><img src="assets/smithsonian-logo.png" alt="Smithsonian"></div>
+          <div class="client-card"><img src="assets/us-courts-logo.png" alt="US Courts"></div>
+          <div class="client-card"><img src="assets/4h-logo.png" alt="4H"></div>
+          <div class="client-card"><img src="assets/acus-logo.svg" alt="ACUS SVG"></div>
         </div>
       </section>
 
@@ -247,16 +238,16 @@
       <section id="gallery" class="section" data-aos="fade-up">
         <div class="section-title"><h2>Climbing Gallery</h2></div>
         <div class="gallery-grid">
-          <img src="assets/climb1.jpg" alt="Climbing 1" onclick="openImage('assets/climb1.jpg')">
-          <img src="assets/climb2.jpg" alt="Climbing 2" onclick="openImage('assets/climb2.jpg')">
-          <img src="assets/climb3.jpg" alt="Climbing 3" onclick="openImage('assets/climb3.jpg')">
+          <img src="assets/climb1.jpg" alt="Climbing 1">
+          <img src="assets/climb2.jpg" alt="Climbing 2">
+          <img src="assets/climb3.jpg" alt="Climbing 3">
         </div>
       </section>
 
       <!-- CONTACT -->
       <section id="contact" class="section" data-aos="fade-up">
         <div class="section-title"><h2>Contact</h2></div>
-        <p>You can reach me via email at <a href="mailto:naikshef@gmail.com" style="color:var(--accent)">naikshef@gmail.com</a> or connect on <a href="https://www.linkedin.com/in/shefalinaik/" style="color:var(--accent)">LinkedIn</a>.</p>
+        <p>You can reach me via email at <a href="mailto:shefali@example.com" style="color:var(--accent)">shefali@example.com</a> or connect on <a href="https://www.linkedin.com/in/shefalinaik/" style="color:var(--accent)">LinkedIn</a>.</p>
       </section>
 
     </div>
