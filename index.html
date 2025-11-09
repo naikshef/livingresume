@@ -1,383 +1,348 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Shefali Naik — Portfolio</title>
 
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <!-- AOS (Animate on Scroll) -->
+  <!-- AOS Animate on Scroll -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
 
   <!-- Font Awesome -->
   <script src="https://kit.fontawesome.com/your_kit_id.js" crossorigin="anonymous"></script>
 
   <style>
+    /* Root variables */
     :root{
-      --bg:#121212; /* dark theme */
-      --card:#1e1e1e;
-      --muted:#b0b0b0;
+      --bg:#0d1117;
+      --card:#161b22;
+      --text:#c9d1d9;
+      --muted:#8b949e;
       --accent:#7c5cff;
-      --glass: rgba(255,255,255,0.05);
-      --glass-2: rgba(255,255,255,0.03);
       --radius:14px;
       --maxw:1100px;
       --nav-h:72px;
     }
-    *{box-sizing:border-box}
-    html,body{height:100%}
+
+    /* Global reset */
+    *{margin:0;padding:0;box-sizing:border-box}
     body{
-      margin:0;
-      font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
-      background: var(--bg);
-      color:#e0e0e0;
+      font-family:'Inter',sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.5;
       scroll-behavior:smooth;
-      line-height:1.45;
       padding-top:var(--nav-h);
     }
-    .container{max-width:var(--maxw);margin:0 auto;padding:28px}
+
+    .container{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+
+    /* Navigation */
     nav{
-      position:fixed;top:0;left:0;right:0;height:var(--nav-h);display:flex;align-items:center;
-      background: rgba(18,18,18,0.95);
+      position:fixed;top:0;left:0;right:0;height:var(--nav-h);
+      display:flex;align-items:center;justify-content:center;
+      background: rgba(13,17,23,0.95);
       backdrop-filter: blur(6px);
-      z-index:999;
       border-bottom:1px solid rgba(255,255,255,0.05);
+      z-index:999;
     }
-    .nav-inner{max-width:var(--maxw);margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between}
-    .brand{display:flex;gap:12px;align-items:center}
+    .nav-inner{width:100%;max-width:var(--maxw);display:flex;justify-content:space-between;align-items:center;padding:0 12px;}
+    .brand{display:flex;align-items:center;gap:12px;}
     .brand .logo{
-      width:44px;height:44px;border-radius:10px;background:var(--accent);display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;
+      width:44px;height:44px;border-radius:12px;background:var(--accent);
+      display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;
       box-shadow:0 6px 18px rgba(124,92,255,0.14);
     }
-    .nav-links a{color:var(--muted);margin-left:18px;text-decoration:none;font-weight:600;font-size:14px}
-    .nav-links a:hover{color:#fff}
+    .nav-links a{
+      color:var(--muted);
+      text-decoration:none;
+      font-weight:600;
+      margin-left:18px;
+      transition:color 0.2s;
+    }
+    .nav-links a:hover{color:var(--accent);}
 
-    /* Hero section spanning full container width */
-    header.hero {
-      display: flex;
-      gap: 28px;
-      align-items: center;
-      padding: 56px 28px;
-      flex-wrap: wrap;
-      max-width: var(--maxw);
-      margin: 0 auto;
+    /* Hero Section */
+    header.hero{
+      display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;
+      padding:80px 0;
     }
-    .hero-left, .hero-right {
-      flex: 1;
-      min-width: 300px;
-    }
-    .hero-right {
-      max-width: 320px;
-    }
+    .hero-left{flex:1;min-width:320px;padding-right:24px;}
+    .hero-left h1{font-size:40px;font-weight:700;margin-bottom:16px;}
+    .hero-left p{font-size:16px;color:var(--muted);margin-bottom:24px;line-height:1.6;}
+    .hero-right{flex:0 0 360px;display:flex;justify-content:center;}
+    .photo{width:360px;height:480px;border-radius:var(--radius);overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,0.5);}
+    .photo img{width:100%;height:100%;object-fit:cover;display:block;}
 
-    .photo{
-      width:320px;height:420px;border-radius:18px;overflow:hidden;background:linear-gradient(180deg,var(--glass),transparent);
-      border:1px solid rgba(255,255,255,0.05);display:flex;align-items:center;justify-content:center;position:relative;
-    }
-    .photo img{width:100%;height:100%;object-fit:cover;display:block}
-    .card{background:var(--card);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.05)}
-    h1{margin:0 0 10px;font-size:32px;letter-spacing:-0.4px}
-    p.lead{color:var(--muted);margin-top:6px;font-size:15px}
-    .cta-row{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap}
+    /* Buttons */
     .btn{
-      display:inline-flex;align-items:center;gap:10px;padding:11px 16px;border-radius:10px;font-weight:600;border:1px solid rgba(0,0,0,0.05);text-decoration:none;color:#fff;background:var(--accent);cursor:pointer;
-      transition:all .18s ease;
+      display:inline-flex;align-items:center;gap:10px;padding:12px 20px;border-radius:12px;font-weight:600;text-decoration:none;
+      transition:all 0.2s;
     }
-    .btn.primary{background:var(--accent);color:#fff;box-shadow:0 10px 30px rgba(124,92,255,0.12)}
-    .meta-row{display:flex;gap:18px;margin-top:18px;flex-wrap:wrap}
-    .meta{background:var(--glass-2);padding:10px 12px;border-radius:10px;color:var(--muted);font-weight:600}
-    .section{padding:56px 28px}
-    .section .section-title{display:flex;align-items:center;gap:12px;margin-bottom:18px}
-    .section .section-title h2{margin:0;font-size:20px;color:var(--accent)}
+    .btn.primary{
+      background:var(--accent);color:#fff;box-shadow:0 10px 30px rgba(124,92,255,0.2);
+    }
+    .btn.primary:hover{filter:brightness(0.9);}
+    .btn.secondary{
+      background:transparent;color:var(--accent);border:1px solid var(--accent);
+    }
+    .btn.secondary:hover{background:var(--accent);color:#fff;}
 
-    /* Clients section - lighter */
-    #clients {
-      background: #ffffff;
-      padding: 56px 0;
-      border-radius: 14px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-      color: #1e1e1e;
-      margin-bottom: 28px;
-    }
-    .clients-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
-      gap:24px;
-      align-items:center;
-    }
-    .client-card{
-      height:120px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      border-radius:12px;
-      padding:12px;
-      transition:all 0.25s ease;
-    }
-    .client-card img{
-      max-height:100px;
-      max-width:100%;
-      object-fit:contain;
-      transition: transform 0.25s, filter 0.25s;
-    }
-    .client-card:hover img{
-      transform: scale(1.08);
-    }
+    /* Sections */
+    .section{padding:80px 0;}
+    .section-title{display:flex;align-items:center;margin-bottom:32px;}
+    .section-title h2{color:var(--accent);font-size:24px;font-weight:700;letter-spacing:1px;}
 
-    /* Certifications */
-    .cert-list{display:flex;flex-direction:column;gap:10px}
-    .cert{background:var(--glass);padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);display:flex;justify-content:space-between;align-items:flex-start}
+    /* Cards */
+    .card{background:var(--card);border-radius:var(--radius);padding:24px;box-shadow:0 6px 24px rgba(0,0,0,0.4);}
+    .meta{color:var(--muted);font-size:14px;}
 
-    /* Quote */
-    .quote-card{font-style:italic;color:#b0b0b0;padding:18px;border-radius:12px;background:rgba(124,92,255,0.12);border:1px solid rgba(124,92,255,0.3)}
+    /* Clients */
+    #clients{background:#f9f9f9;color:#1e1e1e;border-radius:var(--radius);padding:64px 24px;}
+    .clients-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:32px;}
+    .client-card{display:flex;align-items:center;justify-content:center;padding:16px;background:#fff;border-radius:var(--radius);transition:all 0.3s;box-shadow:0 4px 16px rgba(0,0,0,0.15);}
+    .client-card img{max-height:100px;object-fit:contain;transition:transform 0.3s;}
+    .client-card:hover img{transform:scale(1.1);}
+    .client-card:hover{box-shadow:0 8px 32px rgba(0,0,0,0.25);}
 
     /* Gallery */
-    .gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px}
-    .gallery-grid img{width:100%;height:140px;object-fit:cover;border-radius:10px;cursor:pointer;border:1px solid rgba(255,255,255,0.05);transition:transform 0.2s}
-    .gallery-grid img:hover{transform:scale(1.05)}
+    .gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;}
+    .gallery-grid img{width:100%;height:180px;object-fit:cover;border-radius:var(--radius);cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,0.3);transition:transform 0.3s,box-shadow 0.3s;}
+    .gallery-grid img:hover{transform:scale(1.05);box-shadow:0 10px 32px rgba(0,0,0,0.4);}
 
-    footer{padding:36px 0;color:var(--muted);text-align:center;font-size:14px}
-    #scrollTop{position:fixed;right:20px;bottom:22px;background:var(--accent);color:#fff;border-radius:12px;padding:12px 14px;box-shadow:0 10px 24px rgba(124,92,255,0.18);cursor:pointer;display:none;z-index:999;}
-    .modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,0.7);z-index:2000;padding:28px;}
-    .modal.open{display:flex}
-    .modal img{max-width:90%;max-height:86%;border-radius:10px;box-shadow:0 18px 60px rgba(0,0,0,0.6)}
+    /* Quote */
+    .quote-card{font-style:italic;color:var(--muted);padding:24px;border-radius:var(--radius);background:rgba(124,92,255,0.08);border-left:4px solid var(--accent);}
 
-    @media (max-width:900px){.two-col{grid-template-columns:1fr}.hero-right{width:260px}.photo{height:360px}}
-    @media (max-width:560px){nav .nav-links{display:none}.hero-right{display:none}.container{padding:18px}.hero{padding:24px 0}h1{font-size:26px}}
-    #progress{position:fixed;left:0;top:0;height:3px;background:var(--accent);width:0%;z-index:1000;border-bottom-left-radius:3px;border-bottom-right-radius:3px;}
+    /* Certifications */
+    .cert-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;}
+    .cert{background:var(--card);padding:16px;border-radius:var(--radius);box-shadow:0 6px 20px rgba(0,0,0,0.3);transition:all 0.3s;}
+    .cert:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,0.4);}
+    .cert strong{color:#fff;}
+
+    /* Footer */
+    footer{padding:48px 0;text-align:center;color:var(--muted);font-size:14px;background:var(--card);border-top:1px solid rgba(255,255,255,0.05);}
+
+    /* Modal */
+    .modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,0.85);z-index:2000;padding:24px;}
+    .modal.open{display:flex;}
+    .modal img{max-width:90%;max-height:86%;border-radius:var(--radius);box-shadow:0 18px 60px rgba(0,0,0,0.7);transition:transform 0.3s;}
+
+    /* Scroll to top */
+    #scrollTop{position:fixed;right:20px;bottom:20px;padding:12px 16px;border-radius:12px;background:var(--accent);color:#fff;cursor:pointer;box-shadow:0 10px 32px rgba(124,92,255,0.3);display:none;z-index:1000;transition:all 0.2s;}
+    #scrollTop:hover{transform:scale(1.05);}
+
   </style>
 </head>
 <body>
 
-  <div id="progress" aria-hidden="true"></div>
-
-  <nav>
-    <div class="nav-inner">
-      <div class="brand">
-        <div class="logo">SN</div>
-        <div>
-          <div style="font-weight:700">Shefali Naik</div>
-          <div style="font-size:12px;color:var(--muted);margin-top:2px">Director of Engineering | Chief Delivery Officer | AI Enthusiast</div>
-        </div>
-      </div>
-      <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#clients">Clients</a>
-        <a href="#certs">Certifications</a>
-        <a href="#quote">Quote</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#contact">Contact</a>
+<nav>
+  <div class="nav-inner">
+    <div class="brand">
+      <div class="logo">SN</div>
+      <div>
+        <div style="font-weight:700">Shefali Naik</div>
+        <div style="font-size:12px;color:var(--muted);margin-top:2px">Director of Engineering | Chief Delivery Officer | AI Enthusiast</div>
       </div>
     </div>
-  </nav>
-
-  <main>
-    <div class="container">
-      <!-- HERO -->
-      <header class="hero">
-        <div class="hero-left" data-aos="fade-right">
-          <div class="card">
-            <h1>Shefali Naik</h1>
-            <p class="lead">I build and lead engineering teams to deliver exceptional results. Passionate about technology, AI, and climbing mountains both professionally and literally.</p>
-            <div class="cta-row">
-              <a class="btn primary" href="assets/resume.pdf" download><i class="fa fa-download"></i> Download Resume</a>
-              <a class="btn" href="#contact"><i class="fa fa-envelope"></i> Contact Me</a>
-            </div>
-            <div class="meta-row">
-              <div class="meta"><div style="font-size:12px;color:var(--muted)">Years experience</div><div class="counter" id="yearsCounter">0</div></div>
-            </div>
-          </div>
-        </div>
-        <aside class="hero-right" data-aos="fade-left">
-          <div class="photo card">
-            <img src="assets/profile.jpg" alt="Shefali Naik">
-          </div>
-        </aside>
-      </header>
-
-      <!-- ABOUT -->
-      <section id="about" class="section" data-aos="fade-up">
-        <div class="section-title"><h2>About Me</h2></div>
-        <p>I am a Director of Engineering and Chief Delivery Officer with extensive experience in delivering enterprise-level projects. I am passionate about technology, AI, and climbing. My focus is on building high-performing teams and solving complex challenges with creativity and impact.</p>
-      </section>
-
-      <!-- CLIENTS -->
-      <section id="clients" class="section" data-aos="fade-up">
-        <div class="section-title"><h2>Clients & Logos</h2></div>
-        <div class="clients-grid">
-          <div class="client-card"><img src="assets/nara-logo.png" alt="NARA"></div>
-          <div class="client-card"><img src="assets/some-logo.png" alt="Some Logo"></div>
-          <div class="client-card"><img src="assets/acus-logo.png" alt="ACUS"></div>
-          <div class="client-card"><img src="assets/advisory-council-historuc-preservation-logo.png" alt="Advisory Council"></div>
-          <div class="client-card"><img src="assets/bulletin-of-the-atomic-scientists-logo.png" alt="Bulletin of Atomic Scientists"></div>
-          <div class="client-card"><img src="assets/distric-of-columbia-logo.png" alt="District of Columbia"></div>
-          <div class="client-card"><img src="assets/echange-network-logo.png" alt="Exchange Network"></div>
-          <div class="client-card"><img src="assets/english-language-program-logo.png" alt="English Language Program"></div>
-          <div class="client-card"><img src="assets/exchange-network-logo.png" alt="Exchange Network"></div>
-          <div class="client-card"><img src="assets/fcc-logo.png" alt="FCC"></div>
-          <div class="client-card"><img src="assets/georgetown-university-logo.png" alt="Georgetown University"></div>
-          <div class="client-card"><img src="assets/rrb-logo.png" alt="RRB"></div>
-          <div class="client-card"><img src="assets/smithsonian-logo.png" alt="Smithsonian"></div>
-          <div class="client-card"><img src="assets/us-courts-logo.png" alt="US Courts"></div>
-          <div class="client-card"><img src="assets/4h-logo.png" alt="4H"></div>
-          <div class="client-card"><img src="assets/acus-logo.svg" alt="ACUS SVG"></div>
-        </div>
-      </section>
-      <!-- CERTIFICATIONS -->
-      <section id="certs" class="section" data-aos="fade-up">
-        <div class="section-title"><h2>Certifications</h2></div>
-        <div class="cert-list">
-          <div class="cert">
-            <div>
-              <strong>Generative AI Overview for Project Managers</strong><br>
-              Project Management Institute — Issued Apr 2024
-            </div>
-            <div><a href="assets/GenerativeAIOverviewforProjectManagers_Badge.pdf" target="_blank">View Badge</a></div>
-          </div>
-          <div class="cert">
-            <div>
-              <strong>Certified CMMI Associate</strong><br>
-              ISACA — Issued Feb 2024 · Expires Feb 2027<br>
-              Skills: Quality Management, Quality Control, Quality System, Quality Auditing
-            </div>
-          </div>
-          <div class="cert">
-            <div>
-              <strong>Executive Certification</strong><br>
-              The Wharton School — Issued Oct 2022
-            </div>
-          </div>
-          <div class="cert">
-            <div>
-              <strong>IT Information Library Foundations Certification (ITIL)</strong><br>
-              AXELOS Global Best Practice — Issued Jul 2022
-            </div>
-          </div>
-          <div class="cert">
-            <div>
-              <strong>PMI Agile Certified Practitioner (PMI-ACP)</strong><br>
-              Project Management Institute — Issued Apr 2021<br>
-              Credential ID 3005014
-            </div>
-          </div>
-          <div class="cert">
-            <div>
-              <strong>Acquia Certified Site Builder - Drupal 8</strong><br>
-              Acquia — Issued Aug 2018
-            </div>
-          </div>
-          <div class="cert">
-            <div>
-              <strong>Certified Scrum Product Owner</strong><br>
-              Scrum Alliance — Issued Dec 2016<br>
-              Credential ID 000499734
-            </div>
-          </div>
-          <div class="cert">
-            <div>
-              <strong>PMP</strong><br>
-              Project Management Institute — Issued Aug 2016
-            </div>
-          </div>
-          <div class="cert">
-            <div>
-              <strong>Certified Scrum Master</strong><br>
-              Scrum Alliance — Issued Feb 2016 · Expired Feb 2018
-            </div>
-          </div>
-          <div class="cert">
-            <div>
-              <strong>SAFe® Agilist</strong><br>
-              SAFe by Scaled Agile, Inc. — Issued Aug 2016 · Expired Aug 2017<br>
-              Credential ID 03902305-5829
-            </div>
-          </div>
-          <div class="cert">
-            <div>
-              <strong>Sun Certified Java Programmer</strong><br>
-              Sun Microsystems
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- FAVORITE QUOTE -->
-      <section id="quote" class="section" data-aos="fade-up">
-        <div class="section-title"><h2>Favorite Quote</h2></div>
-        <div class="quote-card">
-          "I didn’t come this far to only come this far."
-        </div>
-      </section>
-
-      <!-- GALLERY / CLIMBING PHOTOS -->
-      <section id="gallery" class="section" data-aos="fade-up">
-        <div class="section-title"><h2>Climbing & Adventure</h2></div>
-        <div class="gallery-grid">
-          <img src="assets/climb1.jpg" alt="Climbing 1" onclick="openImage(this.src)">
-          <img src="assets/climb2.jpg" alt="Climbing 2" onclick="openImage(this.src)">
-          <img src="assets/climb3.jpg" alt="Climbing 3" onclick="openImage(this.src)">
-          <img src="assets/climb4.jpg" alt="Climbing 4" onclick="openImage(this.src)">
-        </div>
-      </section>
-
-      <!-- CONTACT -->
-      <section id="contact" class="section" data-aos="fade-up">
-        <div class="section-title"><h2>Contact Me</h2></div>
-        <p>If you want to get in touch for opportunities, collaborations, or just to say hi, feel free to reach out!</p>
-        <p>Email: <a href="mailto:shefali@example.com">shefali@example.com</a></p>
-      </section>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#clients">Clients</a>
+      <a href="#certs">Certifications</a>
+      <a href="#quote">Quote</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
     </div>
-  </main>
-
-  <!-- MODAL FOR GALLERY -->
-  <div class="modal" id="modal" onclick="closeModal()">
-    <img id="modalImg" src="" alt="Expanded Image">
   </div>
+</nav>
 
-  <!-- SCROLL TO TOP -->
-  <div id="scrollTop" onclick="scrollToTop()"><i class="fa fa-chevron-up"></i></div>
+<main>
+  <div class="container">
+    <!-- Hero -->
+    <header class="hero">
+      <div class="hero-left" data-aos="fade-right">
+        <div class="card">
+          <h1>Shefali Naik</h1>
+          <p>I build and lead engineering teams to deliver exceptional results. Passionate about technology, AI, and climbing mountains both professionally and literally.</p>
+          <div style="display:flex;gap:12px;margin-bottom:18px;">
+            <a class="btn primary" href="assets/resume.pdf" download><i class="fa fa-download"></i> Resume</a>
+            <a class="btn secondary" href="#contact"><i class="fa fa-envelope"></i> Contact</a>
+          </div>
+          <div class="meta">Experience: <span id="yearsCounter">0</span> years</div>
+        </div>
+      </div>
+      <div class="hero-right" data-aos="fade-left">
+        <div class="photo card">
+          <img src="assets/profile.jpg" alt="Shefali Naik">
+        </div>
+      </div>
+    </header>
 
-  <footer>
-    &copy; 2025 Shefali Naik. All Rights Reserved.
-  </footer>
+    <!-- About -->
+    <section id="about" class="section" data-aos="fade-up">
+      <div class="section-title"><h2>About Me</h2></div>
+      <p>I am a Director of Engineering and Chief Delivery Officer with extensive experience in delivering enterprise-level projects. I am passionate about technology, AI, and climbing. My focus is on building high-performing teams and solving complex challenges with creativity and impact.</p>
+    </section>
 
-  <!-- Scripts -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-  <script>
-    AOS.init({duration:800,once:true});
+    <!-- Clients -->
+    <section id="clients" class="section" data-aos="fade-up">
+      <div class="section-title"><h2>Clients & Logos</h2></div>
+      <div class="clients-grid">
+        <div class="client-card"><img src="assets/nara-logo.png" alt="NARA"></div>
+        <div class="client-card"><img src="assets/some-logo.png" alt="Some Logo"></div>
+        <div class="client-card"><img src="assets/acus-logo.png" alt="ACUS"></div>
+        <div class="client-card"><img src="assets/advisory-council-historuc-preservation-logo.png" alt="Advisory Council"></div>
+        <div class="client-card"><img src="assets/bulletin-of-the-atomic-scientists-logo.png" alt="Bulletin of Atomic Scientists"></div>
+        <div class="client-card"><img src="assets/distric-of-columbia-logo.png" alt="District of Columbia"></div>
+        <div class="client-card"><img src="assets/echange-network-logo.png" alt="Exchange Network"></div>
+        <div class="client-card"><img src="assets/english-language-program-logo.png" alt="English Language Program"></div>
+        <div class="client-card"><img src="assets/exchange-network-logo.png" alt="Exchange Network"></div>
+        <div class="client-card"><img src="assets/fcc-logo.png" alt="FCC"></div>
+        <div class="client-card"><img src="assets/georgetown-university-logo.png" alt="Georgetown University"></div>
+        <div class="client-card"><img src="assets/rrb-logo.png" alt="RRB"></div>
+        <div class="client-card"><img src="assets/smithsonian-logo.png" alt="Smithsonian"></div>
+        <div class="client-card"><img src="assets/us-courts-logo.png" alt="US Courts"></div>
+        <div class="client-card"><img src="assets/4h-logo.png" alt="4H"></div>
+        <div class="client-card"><img src="assets/acus-logo.svg" alt="ACUS SVG"></div>
+      </div>
+    </section>
 
-    // Scroll to top button
-    const scrollBtn = document.getElementById('scrollTop');
-    window.addEventListener('scroll',()=>{scrollBtn.style.display=(window.scrollY>400)?'flex':'none'});
+        <!-- Certifications -->
+    <section id="certs" class="section" data-aos="fade-up">
+      <div class="section-title"><h2>Certifications</h2></div>
+      <div class="cert-list">
+        <div class="cert">
+          <strong>Generative AI Overview for Project Managers</strong><br>
+          Project Management Institute — Issued Apr 2024<br>
+          <a href="assets/GenerativeAIOverviewforProjectManagers_Badge.pdf" target="_blank" class="btn secondary">View Badge</a>
+        </div>
+        <div class="cert">
+          <strong>Certified CMMI Associate</strong><br>
+          ISACA — Issued Feb 2024 · Expires Feb 2027<br>
+          Skills: Quality Management, Quality Control, Quality System, Quality Auditing
+        </div>
+        <div class="cert">
+          <strong>Executive Certification</strong><br>
+          The Wharton School — Issued Oct 2022
+        </div>
+        <div class="cert">
+          <strong>ITIL Foundation Certification</strong><br>
+          AXELOS Global Best Practice — Issued Jul 2022
+        </div>
+        <div class="cert">
+          <strong>PMI Agile Certified Practitioner (PMI-ACP)</strong><br>
+          Project Management Institute — Issued Apr 2021<br>
+          Credential ID 3005014
+        </div>
+        <div class="cert">
+          <strong>Acquia Certified Site Builder - Drupal 8</strong><br>
+          Acquia — Issued Aug 2018
+        </div>
+        <div class="cert">
+          <strong>Certified Scrum Product Owner</strong><br>
+          Scrum Alliance — Issued Dec 2016<br>
+          Credential ID 000499734
+        </div>
+        <div class="cert">
+          <strong>PMP</strong><br>
+          Project Management Institute — Issued Aug 2016
+        </div>
+        <div class="cert">
+          <strong>Certified Scrum Master</strong><br>
+          Scrum Alliance — Issued Feb 2016 · Expired Feb 2018
+        </div>
+        <div class="cert">
+          <strong>SAFe® Agilist</strong><br>
+          SAFe by Scaled Agile, Inc. — Issued Aug 2016 · Expired Aug 2017<br>
+          Credential ID 03902305-5829
+        </div>
+        <div class="cert">
+          <strong>Sun Certified Java Programmer</strong><br>
+          Sun Microsystems
+        </div>
+      </div>
+    </section>
 
-    function scrollToTop(){window.scrollTo({top:0,behavior:'smooth'})}
+    <!-- Favorite Quote -->
+    <section id="quote" class="section" data-aos="fade-up">
+      <div class="section-title"><h2>Favorite Quote</h2></div>
+      <div class="quote-card">
+        "I didn’t come this far to only come this far."
+      </div>
+    </section>
 
-    // Modal image view
-    function openImage(src){
-      document.getElementById('modalImg').src=src;
-      document.getElementById('modal').classList.add('open');
-    }
-    function closeModal(){document.getElementById('modal').classList.remove('open');}
+    <!-- Gallery / Climbing -->
+    <section id="gallery" class="section" data-aos="fade-up">
+      <div class="section-title"><h2>Climbing & Adventure</h2></div>
+      <div class="gallery-grid">
+        <img src="assets/climb1.jpg" alt="Climbing 1" onclick="openImage(this.src)">
+        <img src="assets/climb2.jpg" alt="Climbing 2" onclick="openImage(this.src)">
+        <img src="assets/climb3.jpg" alt="Climbing 3" onclick="openImage(this.src)">
+        <img src="assets/climb4.jpg" alt="Climbing 4" onclick="openImage(this.src)">
+      </div>
+    </section>
 
-    // Animate experience counter
-    const yearsCounter = document.getElementById('yearsCounter');
-    let years = 20; // replace with actual experience years
-    let count = 0;
-    const interval = setInterval(()=>{
-      if(count>=years){clearInterval(interval)}
-      else{count++; yearsCounter.textContent=count}
-    },50);
+    <!-- Contact -->
+    <section id="contact" class="section" data-aos="fade-up">
+      <div class="section-title"><h2>Contact Me</h2></div>
+      <p>If you want to get in touch for opportunities, collaborations, or just to say hi, feel free to reach out!</p>
+      <p>Email: <a href="mailto:shefali@example.com">shefali@example.com</a></p>
+    </section>
+  </div>
+</main>
 
-    // Scroll progress bar
-    const progress = document.getElementById('progress');
-    window.addEventListener('scroll',()=>{
-      const scrollTop = window.scrollY;
-      const docHeight = document.body.scrollHeight - window.innerHeight;
-      const scrolled = (scrollTop / docHeight) * 100;
-      progress.style.width = scrolled + '%';
-    });
-  </script>
+<!-- Modal for Gallery -->
+<div class="modal" id="modal" onclick="closeModal()">
+  <img id="modalImg" src="" alt="Expanded Image">
+</div>
+
+<!-- Scroll to Top -->
+<div id="scrollTop" onclick="scrollToTop()"><i class="fa fa-chevron-up"></i></div>
+
+<!-- Footer -->
+<footer>
+  &copy; 2025 Shefali Naik. All Rights Reserved.
+</footer>
+
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+  AOS.init({duration:800,once:true});
+
+  // Scroll to top button
+  const scrollBtn = document.getElementById('scrollTop');
+  window.addEventListener('scroll',()=>{scrollBtn.style.display=(window.scrollY>400)?'flex':'none'});
+
+  function scrollToTop(){window.scrollTo({top:0,behavior:'smooth'})}
+
+  // Modal image view
+  function openImage(src){
+    document.getElementById('modalImg').src=src;
+    document.getElementById('modal').classList.add('open');
+  }
+  function closeModal(){document.getElementById('modal').classList.remove('open');}
+
+  // Animate experience counter
+  const yearsCounter = document.getElementById('yearsCounter');
+  let years = 20; // replace with actual experience years
+  let count = 0;
+  const interval = setInterval(()=>{
+    if(count>=years){clearInterval(interval)}
+    else{count++; yearsCounter.textContent=count}
+  },50);
+
+  // Scroll progress bar
+  const progress = document.getElementById('progress');
+  window.addEventListener('scroll',()=>{
+    const scrollTop = window.scrollY;
+    const docHeight = document.body.scrollHeight - window.innerHeight;
+    const scrolled = (scrollTop / docHeight) * 100;
+    progress.style.width = scrolled + '%';
+  });
+</script>
 </body>
 </html>
+
+
