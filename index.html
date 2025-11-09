@@ -16,12 +16,12 @@
 
   <style>
     :root{
-      --bg:#f4f6f8;
-      --card:#ffffff;
-      --muted:#6b7280;
+      --bg:#121212; /* dark theme */
+      --card:#1e1e1e;
+      --muted:#b0b0b0;
       --accent:#7c5cff;
-      --glass: rgba(0,0,0,0.03);
-      --glass-2: rgba(0,0,0,0.02);
+      --glass: rgba(255,255,255,0.05);
+      --glass-2: rgba(255,255,255,0.03);
       --radius:14px;
       --maxw:1100px;
       --nav-h:72px;
@@ -32,7 +32,7 @@
       margin:0;
       font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
       background: var(--bg);
-      color:#1e1e1e;
+      color:#e0e0e0;
       scroll-behavior:smooth;
       line-height:1.45;
       padding-top:var(--nav-h);
@@ -40,10 +40,10 @@
     .container{max-width:var(--maxw);margin:0 auto;padding:28px}
     nav{
       position:fixed;top:0;left:0;right:0;height:var(--nav-h);display:flex;align-items:center;
-      background: rgba(255,255,255,0.95);
+      background: rgba(18,18,18,0.95);
       backdrop-filter: blur(6px);
       z-index:999;
-      border-bottom:1px solid rgba(0,0,0,0.05);
+      border-bottom:1px solid rgba(255,255,255,0.05);
     }
     .nav-inner{max-width:var(--maxw);margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between}
     .brand{display:flex;gap:12px;align-items:center}
@@ -52,16 +52,32 @@
       box-shadow:0 6px 18px rgba(124,92,255,0.14);
     }
     .nav-links a{color:var(--muted);margin-left:18px;text-decoration:none;font-weight:600;font-size:14px}
-    .nav-links a:hover{color:#1e1e1e}
-    header.hero{display:flex;gap:28px;align-items:center;padding:48px 0;flex-wrap:wrap}
-    .hero-left{flex:1;min-width:300px}
-    .hero-right{width:320px;flex:0 0 320px}
+    .nav-links a:hover{color:#fff}
+
+    /* Hero section spanning full container width */
+    header.hero {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+      padding: 56px 28px;
+      flex-wrap: wrap;
+      max-width: var(--maxw);
+      margin: 0 auto;
+    }
+    .hero-left, .hero-right {
+      flex: 1;
+      min-width: 300px;
+    }
+    .hero-right {
+      max-width: 320px;
+    }
+
     .photo{
       width:320px;height:420px;border-radius:18px;overflow:hidden;background:linear-gradient(180deg,var(--glass),transparent);
-      border:1px solid rgba(0,0,0,0.03);display:flex;align-items:center;justify-content:center;position:relative;
+      border:1px solid rgba(255,255,255,0.05);display:flex;align-items:center;justify-content:center;position:relative;
     }
     .photo img{width:100%;height:100%;object-fit:cover;display:block}
-    .card{background:var(--card);padding:18px;border-radius:12px;border:1px solid rgba(0,0,0,0.05)}
+    .card{background:var(--card);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.05)}
     h1{margin:0 0 10px;font-size:32px;letter-spacing:-0.4px}
     p.lead{color:var(--muted);margin-top:6px;font-size:15px}
     .cta-row{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap}
@@ -72,16 +88,17 @@
     .btn.primary{background:var(--accent);color:#fff;box-shadow:0 10px 30px rgba(124,92,255,0.12)}
     .meta-row{display:flex;gap:18px;margin-top:18px;flex-wrap:wrap}
     .meta{background:var(--glass-2);padding:10px 12px;border-radius:10px;color:var(--muted);font-weight:600}
-    .section{padding:56px 0}
+    .section{padding:56px 28px}
     .section .section-title{display:flex;align-items:center;gap:12px;margin-bottom:18px}
     .section .section-title h2{margin:0;font-size:20px;color:var(--accent)}
 
-    /* Clients section */
+    /* Clients section - lighter */
     #clients {
-      background: #ffffff; 
+      background: #ffffff;
       padding: 56px 0;
       border-radius: 14px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+      color: #1e1e1e;
       margin-bottom: 28px;
     }
     .clients-grid{
@@ -111,14 +128,14 @@
 
     /* Certifications */
     .cert-list{display:flex;flex-direction:column;gap:10px}
-    .cert{background:var(--glass);padding:12px;border-radius:10px;border:1px solid rgba(0,0,0,0.02);display:flex;justify-content:space-between;align-items:flex-start}
+    .cert{background:var(--glass);padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);display:flex;justify-content:space-between;align-items:flex-start}
 
     /* Quote */
-    .quote-card{font-style:italic;color:#4b5563;padding:18px;border-radius:12px;background:rgba(124,92,255,0.06);border:1px solid rgba(124,92,255,0.1)}
+    .quote-card{font-style:italic;color:#b0b0b0;padding:18px;border-radius:12px;background:rgba(124,92,255,0.12);border:1px solid rgba(124,92,255,0.3)}
 
     /* Gallery */
     .gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px}
-    .gallery-grid img{width:100%;height:140px;object-fit:cover;border-radius:10px;cursor:pointer;border:1px solid rgba(0,0,0,0.03);transition:transform 0.2s}
+    .gallery-grid img{width:100%;height:140px;object-fit:cover;border-radius:10px;cursor:pointer;border:1px solid rgba(255,255,255,0.05);transition:transform 0.2s}
     .gallery-grid img:hover{transform:scale(1.05)}
 
     footer{padding:36px 0;color:var(--muted);text-align:center;font-size:14px}
@@ -208,71 +225,133 @@
           <div class="client-card"><img src="assets/acus-logo.svg" alt="ACUS SVG"></div>
         </div>
       </section>
-
       <!-- CERTIFICATIONS -->
       <section id="certs" class="section" data-aos="fade-up">
-        <div class="section-title"><h2>Certifications & Licenses</h2></div>
+        <div class="section-title"><h2>Certifications</h2></div>
         <div class="cert-list">
-          <div class="cert"><strong>Generative AI Overview for Project Managers</strong><br>Project Management Institute — Issued Apr 2024</div>
-          <div class="cert"><strong>Certified CMMI Associate</strong><br>ISACA — Issued Feb 2024 · Expires Feb 2027<br>Skills: Quality Management · Quality Control · Quality System · Quality Auditing</div>
-          <div class="cert"><strong>Certified Associate CMMI 3.0</strong><br>ISACA — Issued Feb 2024 · Expires Feb 2027</div>
-          <div class="cert"><strong>Executive Certification</strong><br>The Wharton School — Issued Oct 2022</div>
-          <div class="cert"><strong>IT Information Library Foundations Certification (ITIL)</strong><br>AXELOS Global Best Practice — Issued Jul 2022</div>
-          <div class="cert"><strong>PMI Agile Certified Practitioner (PMI-ACP)</strong><br>Project Management Institute — Issued Apr 2021<br>Credential ID: 3005014</div>
-          <div class="cert"><strong>Acquia Certified Site Builder - Drupal 8</strong><br>Acquia — Issued Aug 2018</div>
-          <div class="cert"><strong>Certified Scrum Product Owner</strong><br>Scrum Alliance — Issued Dec 2016<br>Credential ID: 000499734</div>
-          <div class="cert"><strong>PMP</strong><br>Project Management Institute — Issued Aug 2016</div>
-          <div class="cert"><strong>Certified Scrum Master</strong><br>Scrum Alliance — Issued Feb 2016 · Expired Feb 2018</div>
-          <div class="cert"><strong>SAFe® Agilist</strong><br>SAFe by Scaled Agile, Inc. — Issued Aug 2016 · Expired Aug 2017<br>Credential ID: 03902305-5829</div>
-          <div class="cert"><strong>Sun Certified Java Programmer</strong><br>Sun Microsystems — Issued (date not provided)</div>
+          <div class="cert">
+            <div>
+              <strong>Generative AI Overview for Project Managers</strong><br>
+              Project Management Institute — Issued Apr 2024
+            </div>
+            <div><a href="assets/GenerativeAIOverviewforProjectManagers_Badge.pdf" target="_blank">View Badge</a></div>
+          </div>
+          <div class="cert">
+            <div>
+              <strong>Certified CMMI Associate</strong><br>
+              ISACA — Issued Feb 2024 · Expires Feb 2027<br>
+              Skills: Quality Management, Quality Control, Quality System, Quality Auditing
+            </div>
+          </div>
+          <div class="cert">
+            <div>
+              <strong>Executive Certification</strong><br>
+              The Wharton School — Issued Oct 2022
+            </div>
+          </div>
+          <div class="cert">
+            <div>
+              <strong>IT Information Library Foundations Certification (ITIL)</strong><br>
+              AXELOS Global Best Practice — Issued Jul 2022
+            </div>
+          </div>
+          <div class="cert">
+            <div>
+              <strong>PMI Agile Certified Practitioner (PMI-ACP)</strong><br>
+              Project Management Institute — Issued Apr 2021<br>
+              Credential ID 3005014
+            </div>
+          </div>
+          <div class="cert">
+            <div>
+              <strong>Acquia Certified Site Builder - Drupal 8</strong><br>
+              Acquia — Issued Aug 2018
+            </div>
+          </div>
+          <div class="cert">
+            <div>
+              <strong>Certified Scrum Product Owner</strong><br>
+              Scrum Alliance — Issued Dec 2016<br>
+              Credential ID 000499734
+            </div>
+          </div>
+          <div class="cert">
+            <div>
+              <strong>PMP</strong><br>
+              Project Management Institute — Issued Aug 2016
+            </div>
+          </div>
+          <div class="cert">
+            <div>
+              <strong>Certified Scrum Master</strong><br>
+              Scrum Alliance — Issued Feb 2016 · Expired Feb 2018
+            </div>
+          </div>
+          <div class="cert">
+            <div>
+              <strong>SAFe® Agilist</strong><br>
+              SAFe by Scaled Agile, Inc. — Issued Aug 2016 · Expired Aug 2017<br>
+              Credential ID 03902305-5829
+            </div>
+          </div>
+          <div class="cert">
+            <div>
+              <strong>Sun Certified Java Programmer</strong><br>
+              Sun Microsystems
+            </div>
+          </div>
         </div>
       </section>
 
       <!-- FAVORITE QUOTE -->
       <section id="quote" class="section" data-aos="fade-up">
         <div class="section-title"><h2>Favorite Quote</h2></div>
-        <div class="quote-card">“I didn't come this far to only come this far.”</div>
+        <div class="quote-card">
+          "I didn’t come this far to only come this far."
+        </div>
       </section>
 
-      <!-- GALLERY -->
+      <!-- GALLERY / CLIMBING PHOTOS -->
       <section id="gallery" class="section" data-aos="fade-up">
-        <div class="section-title"><h2>Climbing Gallery</h2></div>
+        <div class="section-title"><h2>Climbing & Adventure</h2></div>
         <div class="gallery-grid">
-          <img src="assets/climb1.jpg" alt="Climbing 1">
-          <img src="assets/climb2.jpg" alt="Climbing 2">
-          <img src="assets/climb3.jpg" alt="Climbing 3">
+          <img src="assets/climb1.jpg" alt="Climbing 1" onclick="openImage(this.src)">
+          <img src="assets/climb2.jpg" alt="Climbing 2" onclick="openImage(this.src)">
+          <img src="assets/climb3.jpg" alt="Climbing 3" onclick="openImage(this.src)">
+          <img src="assets/climb4.jpg" alt="Climbing 4" onclick="openImage(this.src)">
         </div>
       </section>
 
       <!-- CONTACT -->
       <section id="contact" class="section" data-aos="fade-up">
-        <div class="section-title"><h2>Contact</h2></div>
-        <p>You can reach me via email at <a href="mailto:shefali@example.com" style="color:var(--accent)">shefali@example.com</a> or connect on <a href="https://www.linkedin.com/in/shefalinaik/" style="color:var(--accent)">LinkedIn</a>.</p>
+        <div class="section-title"><h2>Contact Me</h2></div>
+        <p>If you want to get in touch for opportunities, collaborations, or just to say hi, feel free to reach out!</p>
+        <p>Email: <a href="mailto:shefali@example.com">shefali@example.com</a></p>
       </section>
-
     </div>
   </main>
 
-  <!-- MODAL FOR IMAGE VIEW -->
-  <div id="modal" class="modal" onclick="closeModal()"><img id="modalImg" src="" alt="Expanded photo"></div>
-  <div id="scrollTop" title="Scroll to top" onclick="scrollToTop()"><i class="fa fa-chevron-up"></i></div>
+  <!-- MODAL FOR GALLERY -->
+  <div class="modal" id="modal" onclick="closeModal()">
+    <img id="modalImg" src="" alt="Expanded Image">
+  </div>
 
+  <!-- SCROLL TO TOP -->
+  <div id="scrollTop" onclick="scrollToTop()"><i class="fa fa-chevron-up"></i></div>
+
+  <footer>
+    &copy; 2025 Shefali Naik. All Rights Reserved.
+  </footer>
+
+  <!-- Scripts -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script>
-    AOS.init({ once:true });
+    AOS.init({duration:800,once:true});
 
-    // Years of experience counter
-    const startYear = 2016;
-    const counter = document.getElementById('yearsCounter');
-    counter.innerText = new Date().getFullYear() - startYear;
+    // Scroll to top button
+    const scrollBtn = document.getElementById('scrollTop');
+    window.addEventListener('scroll',()=>{scrollBtn.style.display=(window.scrollY>400)?'flex':'none'});
 
-    // Scroll-to-top
-    const scrollTopBtn = document.getElementById('scrollTop');
-    window.addEventListener('scroll', ()=>{
-      if(window.scrollY>200) scrollTopBtn.style.display='block';
-      else scrollTopBtn.style.display='none';
-      document.getElementById('progress').style.width=(window.scrollY/(document.body.scrollHeight-window.innerHeight))*100+'%';
-    });
     function scrollToTop(){window.scrollTo({top:0,behavior:'smooth'})}
 
     // Modal image view
@@ -281,6 +360,24 @@
       document.getElementById('modal').classList.add('open');
     }
     function closeModal(){document.getElementById('modal').classList.remove('open');}
+
+    // Animate experience counter
+    const yearsCounter = document.getElementById('yearsCounter');
+    let years = 20; // replace with actual experience years
+    let count = 0;
+    const interval = setInterval(()=>{
+      if(count>=years){clearInterval(interval)}
+      else{count++; yearsCounter.textContent=count}
+    },50);
+
+    // Scroll progress bar
+    const progress = document.getElementById('progress');
+    window.addEventListener('scroll',()=>{
+      const scrollTop = window.scrollY;
+      const docHeight = document.body.scrollHeight - window.innerHeight;
+      const scrolled = (scrollTop / docHeight) * 100;
+      progress.style.width = scrolled + '%';
+    });
   </script>
 </body>
 </html>
