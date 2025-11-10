@@ -91,12 +91,16 @@ nav{
     overflow:hidden;
     max-height:0;
     transition:max-height 0.3s ease;
+    padding:0 24px; /* add horizontal padding */
   }
   .nav-links.open{
     max-height:500px;
-    padding:12px 0;
+    padding:12px 24px; /* padding inside when open */
   }
   .hamburger{display:flex;}
+  .nav-links a{
+    margin:8px 0; /* vertical spacing between links */
+  }
 }
 
 /* Hero Section */
