@@ -70,57 +70,45 @@ nav{
 .nav-links a:hover{color:var(--accent);}
 
 
-/* Hamburger for mobile */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 28px;
-  height: 20px;
-  cursor: pointer;
-  z-index: 1001;
+/* Hamburger */
+.hamburger{
+  display:none;
+  flex-direction:column;
+  cursor:pointer;
+  gap:5px;
 }
-.hamburger div {
-  height: 3px;
-  background: #fff;
-  border-radius: 2px;
-  transition: all 0.3s;
+.hamburger div{
+  width:25px;
+  height:3px;
+  background:var(--accent);
+  border-radius:2px;
+  transition:all 0.3s;
 }
 
-/* Mobile */
-@media (max-width: 700px) {
-  .nav-links {
-    position: fixed;
-    top: var(--nav-h);
-    left: 0;
-    right: 0;
-    height: calc(100vh - var(--nav-h));
-    width: 100%;
-    background: rgba(13,17,23,0.97);
-    flex-direction: column;
-    gap: 16px; /* spacing between links */
-    padding: 24px;
-    transform: translateY(-100%);
-    transition: transform 0.3s ease;
-    z-index: 1000;
-    overflow-y: auto;
+/* Responsive */
+@media(max-width:768px){
+  .nav-links{
+    position:absolute;
+    top:var(--nav-h);
+    left:0;
+    right:0;
+    background:var(--bg);
+    flex-direction:column;
+    overflow:hidden;
+    max-height:0;
+    transition:max-height 0.3s ease;
+    padding:0 24px; /* add horizontal padding */
   }
-
-  .nav-links a {
-    display: block; /* ensures one link per line */
-    font-size: 20px;
-    color: #fff;
-    opacity: 0;
-    margin: 0;
-    transform: translateY(-10px);
-    transition: all 0.3s ease;
+  .nav-links.open{
+    max-height:500px;
+    padding:12px 24px; /* padding inside when open */
   }
-
-  .nav-links.open a {
-    opacity: 1;
-    transform: translateY(0);
+  .hamburger{display:flex;}
+  .nav-links a{
+    margin:8px 0; /* vertical spacing between links */
   }
 }
+
   
 /* Hero Section */
 header.hero{
