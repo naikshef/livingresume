@@ -87,11 +87,27 @@ nav{
 
 /* Responsive */
 @media(max-width:768px){
+
+  /* Hide subtitle on mobile */
+  .brand .subtitle {
+    display: none;
+  }
+
+  /* Center the brand logo and title nicely */
+  .brand {
+    flex-direction: column;
+    align-items: flex-start; /* align to left */
+    gap: 4px; /* small space between logo and title */
+  }
+  .brand .logo {
+    margin-bottom: 4px;
+  }
+  .brand .title {
+    font-size: 20px; /* adjust as needed */
+  }
+
   .nav-links{
-    position:absolute;
-    top:var(--nav-h);
-    left:0;
-    right:0;
+    align-items: flex-start;
     background:var(--bg);
     flex-direction:column;
     overflow:hidden;
