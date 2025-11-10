@@ -87,10 +87,15 @@ nav{
   transition: all 0.3s;
 }
 
-/* Mobile menu */
 @media(max-width:768px){
+  .brand .name {
+    display: none;
+  }
+
+  /* Hamburger left-aligned */
   .hamburger {
     display: flex;
+    order: -1; /* move before logo in flex layout */
   }
 
   .nav-links {
@@ -100,7 +105,7 @@ nav{
     right: 0;
     background: var(--bg);
     flex-direction: column;
-    align-items: flex-start;  /* links aligned left */
+    align-items: flex-start; /* links aligned left */
     padding: 12px 24px;
     max-height: 0;
     overflow: hidden;
@@ -119,7 +124,6 @@ nav{
     color: #fff;
   }
 }
-
 
   
 /* Hero Section */
