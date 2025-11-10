@@ -122,12 +122,13 @@ header.hero{
   box-shadow:0 4px 16px rgba(0,0,0,0.15);
 }
 .client-card img{
-  max-height:100px;
+  max-height:140px;  /* enlarged from 100px */
+  max-width:90%;      /* allow width to expand */
   object-fit:contain;
   transition:transform 0.3s;
 }
 .client-card:hover img{
-  transform:scale(1.1);
+  transform: scale(1.15); /* slightly bigger on hover */
 }
 .client-card:hover{
   box-shadow:0 8px 32px rgba(0,0,0,0.25);
