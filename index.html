@@ -167,12 +167,12 @@ header.hero{
 .section-title{display:flex;align-items:center;margin-bottom:32px;}
 .section-title h2{color:var(--accent);font-size:24px;font-weight:700;letter-spacing:1px;}
 
-/* Clients / Firms Grid (updated for equal heights) */
+/* Clients / Firms Grid (logos slightly larger) */
 .clients-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 24px;
-  align-items: stretch; /* ensures equal height per row */
+  align-items: stretch;
 }
 
 .client-card {
@@ -184,13 +184,13 @@ header.hero{
   padding: 16px;
   box-shadow: 0 4px 16px rgba(0,0,0,0.15);
   transition: all 0.3s;
-  height: 160px; /* consistent height across cards */
+  height: 170px; /* slightly taller for balance */
   cursor: pointer;
 }
 
 .client-card img {
   max-width: 100%;
-  max-height: 80%; /* keep logos visually uniform */
+  max-height: 90%; /* increased from 80% → logos appear bigger */
   object-fit: contain;
   transition: transform 0.3s;
 }
@@ -209,7 +209,11 @@ header.hero{
   }
 
   .client-card {
-    height: 140px; /* slightly smaller on mobile, still uniform */
+    height: 150px; /* slightly larger than before to fit new logo size */
+  }
+
+  .client-card img {
+    max-height: 88%;
   }
 }
 
