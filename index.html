@@ -131,6 +131,35 @@ nav{
   }
 }
 
+@media (max-width: 768px) {
+  /* Fix hamburger visibility & hero overflow only on mobile */
+  html, body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  .hero {
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+
+  .hero-right,
+  .hero-left {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .photo,
+  .photo img {
+    display: block;
+    width: 100%;
+    max-width: 100vw;
+    height: auto;
+    object-fit: cover;
+  }
+}
+
   
 /* Hero Section */
 header.hero{
